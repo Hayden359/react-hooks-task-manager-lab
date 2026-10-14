@@ -1,14 +1,9 @@
-import React, { useRef, useState, useContext } from "react";
-import TaskList from "./TaskList";
-import { TaskContext } from "../context/TaskContext";
+import React from "react";
 
-function SearchBar() {
-  const [query, setQuery] = useState("");
-
+function SearchBar({ query, setQuery }) {
   function handleSearch(e) {
     setQuery(e.target.value);
   }
-
 
   return (
     <div>
@@ -18,7 +13,6 @@ function SearchBar() {
         value={query}
         onChange={handleSearch}
       />
-      <TaskList query={query}/>
     </div>
   );
 }
